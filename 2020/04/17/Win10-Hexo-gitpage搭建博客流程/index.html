@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="### 需要安装的文件 - Node.js (默认自带了npm) - git - 进入git bash安装安装hexo npm install hexo-cli -g ### Hexo 初始化和本地预览 &#96;&#96;&#96;bash hexo g # 生成页面 hexo s # 启动预览 &#96;&#96;&#96; 访问 http:&#x2F;&#x2F;localhost:4000，出现 Hexo 默认页面，本地博客安装成功！ ### 部署 Hex">
+<meta name="description" content="需要安装的文件 Node.js (默认自带了npm)  git  进入git bash安装安装hexo npm install hexo-cli -g   Hexo 初始化和本地预览123hexo g # 生成页面hexo s # 启动预览 访问 http:&#x2F;&#x2F;localhost:4000，出现 Hexo 默认页面，本地博客安装成功！ 部署 Hexo 到 GitHub Pages安装： npm i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Win10+Hexo+gitpage搭建博客流程">
 <meta property="og:url" content="http://yoursite.com/2020/04/17/Win10-Hexo-gitpage%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="zdqzyx&#39;s algorithm blog">
-<meta property="og:description" content="### 需要安装的文件 - Node.js (默认自带了npm) - git - 进入git bash安装安装hexo npm install hexo-cli -g ### Hexo 初始化和本地预览 &#96;&#96;&#96;bash hexo g # 生成页面 hexo s # 启动预览 &#96;&#96;&#96; 访问 http:&#x2F;&#x2F;localhost:4000，出现 Hexo 默认页面，本地博客安装成功！ ### 部署 Hex">
+<meta property="og:description" content="需要安装的文件 Node.js (默认自带了npm)  git  进入git bash安装安装hexo npm install hexo-cli -g   Hexo 初始化和本地预览123hexo g # 生成页面hexo s # 启动预览 访问 http:&#x2F;&#x2F;localhost:4000，出现 Hexo 默认页面，本地博客安装成功！ 部署 Hexo 到 GitHub Pages安装： npm i">
 <meta property="article:published_time" content="2020-04-17T08:44:21.000Z">
-<meta property="article:modified_time" content="2020-04-17T12:57:31.635Z">
+<meta property="article:modified_time" content="2020-04-18T08:07:12.393Z">
 <meta property="article:author" content="zdqzyx">
 <meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
@@ -364,6 +364,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
 
@@ -382,51 +387,31 @@
       
 
       
-        <p><strong>### 需要安装的文件</strong></p>
-<p>- <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a> (默认自带了npm)</p>
-<p>- git</p>
-<p>- 进入git bash安装安装hexo <code>npm install hexo-cli -g</code></p>
-<p><strong>### Hexo 初始化和本地预览</strong></p>
-<p>```bash</p>
-<p>hexo g # 生成页面</p>
-<p>hexo s # 启动预览</p>
-<p>```</p>
+        <h3 id="需要安装的文件"><a href="#需要安装的文件" class="headerlink" title="需要安装的文件"></a>需要安装的文件</h3><ul>
+<li><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a> (默认自带了npm)</p>
+</li>
+<li><p>git</p>
+</li>
+<li><p>进入git bash安装安装hexo <code>npm install hexo-cli -g</code></p>
+</li>
+</ul>
+<h3 id="Hexo-初始化和本地预览"><a href="#Hexo-初始化和本地预览" class="headerlink" title="Hexo 初始化和本地预览"></a>Hexo 初始化和本地预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment"># 生成页面</span></span><br><span class="line"></span><br><span class="line">hexo s <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
 <p>访问 <a href="http://localhost:4000，出现">http://localhost:4000，出现</a> Hexo 默认页面，本地博客安装成功！</p>
-<p><strong>### 部署 Hexo 到 GitHub Pages</strong></p>
-<p>安装： <code>npm install hexo-deployer-git --save</code> </p>
+<h3 id="部署-Hexo-到-GitHub-Pages"><a href="#部署-Hexo-到-GitHub-Pages" class="headerlink" title="部署 Hexo 到 GitHub Pages"></a>部署 Hexo 到 GitHub Pages</h3><p>安装： <code>npm install hexo-deployer-git --save</code> </p>
 <p>然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</p>
-<p>```bash</p>
-<p>deploy:</p>
-<p> type: git</p>
-<p> repository: git@github.com:用户名/用户名.github.io.git</p>
-<p> branch: master</p>
-<p>```</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> <span class="built_in">type</span>: git</span><br><span class="line"> repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure>
 <p>运行 hexo d 将网站上传部署到 GitHub Pages。 </p>
 <p>访问 <a href="https://用户名.github.io" target="_blank" rel="noopener">https://用户名.github.io</a> 就可以看到部署的自己网站</p>
-<p><strong>### 更改主题</strong></p>
-<p>进入themes文件夹下运行下载 </p>
-<p>```git clone <a href="https://github.com/iissnan/hexo-theme-next```" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next```</a> </p>
-<p>然后打开_config.yml 配置文件 </p>
-<p>```theme: landscape <code>替换成</code>theme: hexo-theme-next``` </p>
-<p>重新在项目根目录下进行本地部署调试 <code>hexo s</code> 即可看到效果</p>
-<p><strong>### 本地做更改后，重新发布到GitHub</strong></p>
-<p>```bash</p>
-<p>hexo clean # 清除缓存文件等</p>
-<p>hexo g   # 生成页面</p>
-<p>hexo s   # 启动预览</p>
-<p>```</p>
+<h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><p>进入themes文件夹下运行下载 </p>
+<figure class="highlight plain"><figcaption><span>clone</span><a href="https://github.com/iissnan/hexo-theme-next```" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后打开_config.yml 配置文件 </span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;theme: landscape &#96;&#96;&#96;替换成&#96;&#96;&#96;theme: hexo-theme-next&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">重新在项目根目录下进行本地部署调试 &#96;&#96;&#96;hexo s&#96;&#96;&#96; 即可看到效果</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 本地做更改后，重新发布到GitHub</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line"></span><br><span class="line">hexo clean # 清除缓存文件等</span><br><span class="line"></span><br><span class="line">hexo g   # 生成页面</span><br><span class="line"></span><br><span class="line">hexo s   # 启动预览</span><br></pre></td></tr></table></figure>
 <p>连着的命令</p>
-<p>```bash</p>
-<p># 就是清除、生成、启动 </p>
-<p>hexo clean &amp;&amp; hexo g -s</p>
-<p># 就是清除、生成、部署</p>
-<p>hexo clean &amp;&amp; hexo g -d </p>
-<p>```</p>
-<p><strong>### Next设置</strong></p>
-<p>ref:</p>
-<p>> <a href="http://theme-next.iissnan.com/getting-started.html#select-language" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html#select-language</a></p>
-<p>> <a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/theme-settings.html</a></p>
-<p>> <a href="https://go2think.com/build-blog-with-hexo-on-github-pages/" target="_blank" rel="noopener">https://go2think.com/build-blog-with-hexo-on-github-pages/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 就是清除、生成、启动 </span></span><br><span class="line">hexo clean &amp;&amp; hexo g -s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 就是清除、生成、部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
+<h3 id="Next设置"><a href="#Next设置" class="headerlink" title="Next设置"></a>Next设置</h3><p>ref:</p>
+<blockquote>
+<p><a href="http://theme-next.iissnan.com/getting-started.html#select-language" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html#select-language</a></p>
+<p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/theme-settings.html</a></p>
+<p><a href="https://go2think.com/build-blog-with-hexo-on-github-pages/" target="_blank" rel="noopener">https://go2think.com/build-blog-with-hexo-on-github-pages/</a></p>
+</blockquote>
 <h3 id="正常显示Mathjax"><a href="#正常显示Mathjax" class="headerlink" title="正常显示Mathjax"></a>正常显示Mathjax</h3><p>ref: <a href="https://wangcong.net/article/HexoWihLaTeX.html#comments" target="_blank" rel="noopener">https://wangcong.net/article/HexoWihLaTeX.html#comments</a></p>
 
       
@@ -625,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正常显示Mathjax"><span class="nav-number">1.</span> <span class="nav-text">正常显示Mathjax</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要安装的文件"><span class="nav-number">1.</span> <span class="nav-text">需要安装的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-初始化和本地预览"><span class="nav-number">2.</span> <span class="nav-text">Hexo 初始化和本地预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署-Hexo-到-GitHub-Pages"><span class="nav-number">3.</span> <span class="nav-text">部署 Hexo 到 GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改主题"><span class="nav-number">4.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next设置"><span class="nav-number">5.</span> <span class="nav-text">Next设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正常显示Mathjax"><span class="nav-number">6.</span> <span class="nav-text">正常显示Mathjax</span></a></li></ol></div>
             
 
           </div>
@@ -669,6 +654,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
