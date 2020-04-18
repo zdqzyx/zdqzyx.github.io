@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="zdqzyx&#39;s algorithm blog">
 <meta property="og:description" content="需要安装的文件 Node.js (默认自带了npm)  git  进入git bash安装安装hexo npm install hexo-cli -g   Hexo 初始化和本地预览123hexo g # 生成页面hexo s # 启动预览 访问 http:&#x2F;&#x2F;localhost:4000，出现 Hexo 默认页面，本地博客安装成功！ 部署 Hexo 到 GitHub Pages安装： npm i">
 <meta property="article:published_time" content="2020-04-17T08:44:21.000Z">
-<meta property="article:modified_time" content="2020-04-18T08:07:12.393Z">
+<meta property="article:modified_time" content="2020-04-18T10:46:18.030Z">
 <meta property="article:author" content="zdqzyx">
 <meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
@@ -365,11 +365,42 @@
 
           
             <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="page-pv"><i class="fa fa-file-o"></i>
             <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
           
 
           
@@ -413,7 +444,8 @@
 <p><a href="https://go2think.com/build-blog-with-hexo-on-github-pages/" target="_blank" rel="noopener">https://go2think.com/build-blog-with-hexo-on-github-pages/</a></p>
 </blockquote>
 <h3 id="正常显示Mathjax"><a href="#正常显示Mathjax" class="headerlink" title="正常显示Mathjax"></a>正常显示Mathjax</h3><p>ref: <a href="https://wangcong.net/article/HexoWihLaTeX.html#comments" target="_blank" rel="noopener">https://wangcong.net/article/HexoWihLaTeX.html#comments</a></p>
-
+<h3 id="设置访问总站pv和uv（不蒜子）"><a href="#设置访问总站pv和uv（不蒜子）" class="headerlink" title="设置访问总站pv和uv（不蒜子）"></a>设置访问总站pv和uv（不蒜子）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  <span class="comment"># count values only if the other configs are false</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># custom uv span for the whole site</span></span><br><span class="line">  site_uv: <span class="literal">true</span></span><br><span class="line">  site_uv_header: &lt;i class=<span class="string">"fa fa-user"</span>&gt;&lt;/i&gt;</span><br><span class="line">  site_uv_footer:</span><br><span class="line">  <span class="comment"># custom pv span for the whole site</span></span><br><span class="line">  site_pv: <span class="literal">true</span></span><br><span class="line">  site_pv_header: &lt;i class=<span class="string">"fa fa-eye"</span>&gt;&lt;/i&gt;</span><br><span class="line">  site_pv_footer:</span><br><span class="line">  <span class="comment"># custom pv span for one page only</span></span><br><span class="line">  page_pv: <span class="literal">true</span></span><br><span class="line">  page_pv_header: &lt;i class=<span class="string">"fa fa-file-o"</span>&gt;&lt;/i&gt;</span><br><span class="line">  page_pv_footer:</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">busuanzi_count:</span><br><span class="line">  <span class="comment"># count values only if the other configs are false</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># custom uv span for the whole site</span></span><br><span class="line">  site_uv: <span class="literal">true</span></span><br><span class="line">  site_uv_header: 访客数</span><br><span class="line">  site_uv_footer: 人</span><br><span class="line">  <span class="comment"># custom pv span for the whole site</span></span><br><span class="line">  site_pv: <span class="literal">true</span></span><br><span class="line">  site_pv_header: 总访问量</span><br><span class="line">  site_pv_footer: 次</span><br><span class="line">  <span class="comment"># custom pv span for one page only</span></span><br><span class="line">  page_pv: <span class="literal">true</span></span><br><span class="line">  page_pv_header: &lt;i class=<span class="string">"fa fa-file-o"</span>&gt;&lt;/i&gt;  阅读数</span><br><span class="line">  page_pv_footer:</span><br></pre></td></tr></table></figure>
+<h3 id="设置阅读字数和时长"><a href="#设置阅读字数和时长" class="headerlink" title="设置阅读字数和时长"></a>设置阅读字数和时长</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span>         <span class="comment"># 单篇 字数统计</span></span><br><span class="line">  min2read: <span class="literal">true</span>          <span class="comment"># 单篇 阅读时长</span></span><br><span class="line">  totalcount: <span class="literal">false</span>       <span class="comment"># 网站 字数统计</span></span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -610,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要安装的文件"><span class="nav-number">1.</span> <span class="nav-text">需要安装的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-初始化和本地预览"><span class="nav-number">2.</span> <span class="nav-text">Hexo 初始化和本地预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署-Hexo-到-GitHub-Pages"><span class="nav-number">3.</span> <span class="nav-text">部署 Hexo 到 GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改主题"><span class="nav-number">4.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next设置"><span class="nav-number">5.</span> <span class="nav-text">Next设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正常显示Mathjax"><span class="nav-number">6.</span> <span class="nav-text">正常显示Mathjax</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要安装的文件"><span class="nav-number">1.</span> <span class="nav-text">需要安装的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-初始化和本地预览"><span class="nav-number">2.</span> <span class="nav-text">Hexo 初始化和本地预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署-Hexo-到-GitHub-Pages"><span class="nav-number">3.</span> <span class="nav-text">部署 Hexo 到 GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改主题"><span class="nav-number">4.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next设置"><span class="nav-number">5.</span> <span class="nav-text">Next设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正常显示Mathjax"><span class="nav-number">6.</span> <span class="nav-text">正常显示Mathjax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置访问总站pv和uv（不蒜子）"><span class="nav-number">7.</span> <span class="nav-text">设置访问总站pv和uv（不蒜子）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置阅读字数和时长"><span class="nav-number">8.</span> <span class="nav-text">设置阅读字数和时长</span></a></li></ol></div>
             
 
           </div>
@@ -637,6 +669,15 @@
   <span class="author" itemprop="copyrightHolder">zdqzyx</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
 </div>
 
 
@@ -659,17 +700,17 @@
 
   
     <span class="site-uv">
-      访客数
+      <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人
+      
     </span>
   
 
   
     <span class="site-pv">
-      总访问量
+      <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
+      
     </span>
   
 </div>

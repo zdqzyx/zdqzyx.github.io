@@ -369,6 +369,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -387,74 +418,23 @@
       
         
           
-            <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h2><ul>
-<li><p><a href="LeetCode/dp/53.%20最大子序和.py">53.最大连续子序列和</a> | <a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener">leetcode</a>  </p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(dp[i<span class="number">-1</span>]+nums[i], nums[i])  </span><br><span class="line"><span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure></li>
-<li><a href="LeetCode/dp/198.%20打家劫舍.py">198.打家劫舍</a> | <a href="https://leetcode-cn.com/problems/house-robber/" target="_blank" rel="noopener">leetcode</a> | 输入非负一维数组，不能连续两个数相邻，求最大和  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(dp[i<span class="number">-1</span>],dp[i<span class="number">-2</span>]+nums[i]) </span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="中等"><a href="#中等" class="headerlink" title="中等"></a>中等</h2><ul>
-<li><p><a href="LeetCode/dp/3.无重复字符的最长子串.py">3.无重复字符的最长子串</a> | <a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener">leetcode</a> | 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[i]表示以i位置结尾的字符最长无重复字串长度</span></span><br><span class="line"><span class="keyword">if</span> i - dp[i - <span class="number">1</span>] &gt; d.get(s[i], <span class="number">-1</span>):</span><br><span class="line">    dp[i] = dp[i - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    dp[i] = i - d.get(s[i], <span class="number">-1</span>)</span><br><span class="line">d[s[i]] = i</span><br><span class="line"><span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/5.最长回文子串.py">5.最长回文子串</a> | <a href="https://leetcode-cn.com/problems/longest-palindromic-substring" target="_blank" rel="noopener">leetcode</a> | 给定一个字符串 s，找到 s 中最长的回文子串。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[i][j]表示i开始j结尾得字符串是否为回文串</span></span><br><span class="line"><span class="keyword">if</span> s[i]==s[j] <span class="keyword">and</span> (j-i&lt;=<span class="number">1</span> <span class="keyword">or</span> dp[i+<span class="number">1</span>][j<span class="number">-1</span>]==<span class="number">1</span>):</span><br><span class="line">    dp[i][j] = <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> s[start:start+max_len]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/63.%20不同路径II.py">63.不同路径II</a> | <a href="https://leetcode-cn.com/problems/unique-paths-ii/" target="_blank" rel="noopener">leetcode</a> | 二维数组坐上到右下，求不同路径个数  </p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> obstacleGrid[i<span class="number">-1</span>][j<span class="number">-1</span>] == <span class="number">0</span>:</span><br><span class="line">    dp[i][j] = dp[i<span class="number">-1</span>][j]+dp[i][j<span class="number">-1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    dp[i][j] = <span class="number">0</span></span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/64.%20最小路径和.py">64.最小路径和</a> | <a href="https://leetcode-cn.com/problems/minimum-path-sum/" target="_blank" rel="noopener">leetcode</a> | 二维数组坐上到右下，求最小路径和</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = min(dp[i<span class="number">-1</span>][j], dp[i][j<span class="number">-1</span>]) + grid[i][j]</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></li>
-<li><p><a href="LeetCode/dp/91.解码方法.py">91.解码方法</a> | <a href="https://leetcode-cn.com/problems/decode-ways" target="_blank" rel="noopener">leetcode</a> | 一条包含字母 A-Z 的消息解码为数字的种数</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> s[i<span class="number">-1</span>]==<span class="string">'0'</span>:</span><br><span class="line">    <span class="keyword">if</span> s[i<span class="number">-2</span>]==<span class="string">'1'</span> <span class="keyword">or</span> s[i<span class="number">-2</span>]==<span class="string">'2'</span>:</span><br><span class="line">        dp[i] = dp[i - <span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">elif</span> s[i<span class="number">-2</span>:i]&gt;=<span class="string">'10'</span> <span class="keyword">and</span> s[i<span class="number">-2</span>:i]&lt;=<span class="string">'26'</span>:</span><br><span class="line">    dp[i] = dp[i<span class="number">-1</span>]+dp[i<span class="number">-2</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    dp[i] = dp[i<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><a href="LeetCode/dp/120.%20三角形最小路径和.py">120.三角形最小路径和</a> | <a href="https://leetcode-cn.com/problems/triangle/" target="_blank" rel="noopener">leetcode</a> | 给定一个三角形，找出自顶向下的最小路径和。每一步只能移动到下一行中相邻的结点上。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从下到上求 优化空间复杂度O(n)</span></span><br><span class="line">dp[j] = min(dp[j], dp[j+<span class="number">1</span>])+triangle[i][j]</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/139.%20单词拆分.py">139.单词拆分</a> | <a href="https://leetcode-cn.com/problems/word-break/" target="_blank" rel="noopener">leetcode</a> | 给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被拆分为一个或多个在字典中出现的单词。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[i]表示以i位置结尾的字符串是否符合条件 </span></span><br><span class="line">dp = [<span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(s) + <span class="number">1</span>)]</span><br><span class="line">dp[<span class="number">0</span>] = <span class="literal">True</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(s)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">        <span class="keyword">if</span> dp[d] == <span class="literal">True</span> <span class="keyword">and</span> s[j:i] <span class="keyword">in</span> wordDict:</span><br><span class="line">            dp[i] = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></li>
-<li><a href="LeetCode/dp/152.乘积最大连续子数组.py">152.乘积最大连续子数组</a> | <a href="https://leetcode-cn.com/problems/maximum-product-subarray" target="_blank" rel="noopener">leetcode</a> | 给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">max_val, min_val = max(nums[i], nums[i]*max_val, nums[i]*min_val), min(nums[i], nums[i]*max_val, nums[i]*min_val)</span><br><span class="line">res = max(res, max_val, min_val)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><a href="LeetCode/dp/221.%20最大正方形.py">221.最大正方形</a> | <a href="https://leetcode-cn.com/problems/maximal-square/" target="_blank" rel="noopener">leetcode</a> | 在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = min(dp[i<span class="number">-1</span>][j], dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])+<span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> max(dp[i][j])</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/264.%20丑数%20II.py">264.丑数II</a> | <a href="https://leetcode-cn.com/problems/ugly-number-ii" target="_blank" rel="noopener">leetcode</a> | 编写一个程序，找出第 n 个丑数。丑数就是只包含质因数 2, 3, 5 的正整数。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[i]表示第i个丑数</span></span><br><span class="line">dp[i] = min(dp[i2] * <span class="number">2</span>, dp[i3] * <span class="number">3</span>, dp[i5] * <span class="number">5</span>)</span><br><span class="line"><span class="comment"># update i2,i3,i5</span></span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure></li>
-<li><p><a href="LeetCode/dp/279.完全平方数.py">279.完全平方数</a> | <a href="https://leetcode-cn.com/problems/perfect-squares" target="_blank" rel="noopener">leetcode</a> | 给定正整数 n，找到若干个完全平方数（比如 1, 4, 9, 16, …）使得它们的和等于 n。你需要让组成和的完全平方数的个数最少。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># numSquares(n)=min(numSquares(n-k) + 1)∀k∈square numbers</span></span><br><span class="line"><span class="comment"># dp[i]表示第i个数需要的最少平方数个数，则对于当前的第i个数来说，dp[i-k]为减去平方数k后的数字需要的最少平方数个数，在+1得到dp[i]，取所有平方数情况的最小值得到最终的dp[i]</span></span><br><span class="line"><span class="keyword">if</span> i-k&gt;=<span class="number">0</span>:</span><br><span class="line">    dp[i] = min(dp[i], dp[i-k]+<span class="number">1</span>)</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/300.最长上升子序列.py">300.最长上升子序列</a> | <a href="https://leetcode-cn.com/problems/longest-increasing-subsequence" target="_blank" rel="noopener">leetcode</a> | 编写一个程序，找出第 n 个丑数。丑数就是只包含质因数 2, 3, 5 的正整数。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[i]表示以i位置结尾的最长上升子序列的长度</span></span><br><span class="line"><span class="keyword">if</span> nums[i]&gt;nums[j]:</span><br><span class="line">    dp[i] = max(dp[i], dp[j]+<span class="number">1</span>)</span><br><span class="line"><span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure></li>
-<li><p><a href="LeetCode/dp/338.比特位计数.py">338.比特位计数</a> | <a href="https://leetcode-cn.com/problems/counting-bits" target="_blank" rel="noopener">leetcode</a> | 给定一个非负整数 num。对于 0 ≤ i ≤ num 范围中的每个数字 i ，计算其二进制数中的 1 的数目并将它们作为数组返回。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#最后有效设置位 dp[i] = dp[i&amp;(i-1)]+1</span></span><br><span class="line"><span class="comment"># 最低设置位， dp[i] = dp[i//2]+int(i%2==1)</span></span><br><span class="line"><span class="keyword">return</span> dp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/740.删除与获得点数.py">740.删除与获得点数</a> | <a href="https://leetcode-cn.com/problems/counting-bits" target="_blank" rel="noopener">leetcode</a> | 给定一个整数数组 nums ，你可以对它进行一些操作。每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素,开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(dp[i<span class="number">-1</span>], dp[i<span class="number">-2</span>]+d.get(i, <span class="number">0</span>))</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/1143.最长公共子序列.py">1143.最长公共子序列</a> | <a href="https://leetcode-cn.com/problems/longest-common-subsequence" target="_blank" rel="noopener">leetcode</a> | 给定一个整数数组 nums ，你可以对它进行一些操作。每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素,开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化 dp[n+1][m+1]</span></span><br><span class="line">dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+<span class="number">1</span> <span class="keyword">if</span> text1[i<span class="number">-1</span>]==text2[j<span class="number">-1</span>] <span class="keyword">else</span> max(dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j])</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="困难"><a href="#困难" class="headerlink" title="困难"></a>困难</h2><ul>
-<li><p><a href="LeetCode/dp/72.%20编辑距离.py">72.编辑距离</a> | <a href="https://leetcode-cn.com/problems/edit-distance" target="_blank" rel="noopener">leetcode</a> | 给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。  </p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>] <span class="keyword">if</span> word1[i<span class="number">-1</span>]==word2[j<span class="number">-1</span>] <span class="keyword">else</span> <span class="number">1</span>+min(dp[i<span class="number">-1</span>][j], dp[i][j<span class="number">-1</span>], dp[i<span class="number">-1</span>][j<span class="number">-1</span>])</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/85.%20最大矩形面积.py">85.最大矩形面积</a> | <a href="https://leetcode-cn.com/problems/maximal-rectangle/" target="_blank" rel="noopener">leetcode</a> | 给你两个单词 word1 和 word2，请你计算出将 word1 转换成 word2 所使用的最少操作数 。只能使用插入，删除，替换三个操作</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> obstacleGrid[i<span class="number">-1</span>][j<span class="number">-1</span>] == <span class="number">0</span>:</span><br><span class="line">    dp[i][j] = dp[i<span class="number">-1</span>][j]+dp[i][j<span class="number">-1</span>]</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    dp[i][j] = <span class="number">0</span></span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/174.地下城游戏.py">174.地下城游戏</a> | <a href="https://leetcode-cn.com/problems/dungeon-game" target="_blank" rel="noopener">leetcode</a> | 编写一个函数来计算确保骑士能够拯救到公主所需的最低初始健康点数。</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#自底向上, 倒叙逆向类型</span></span><br><span class="line">dp[i][j] = max(<span class="number">1</span>, min(dp[i+<span class="number">1</span>][j], dp[i][j+<span class="number">1</span>])-dungeon[i][j])</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="LeetCode/dp/887.鸡蛋掉落.py">887.鸡蛋掉落</a> | <a href="https://leetcode-cn.com/problems/super-egg-drop" target="_blank" rel="noopener">leetcode</a> | N层楼，K个鸡蛋，找到最小移动次数来确定F楼层，使得鸡蛋在&lt;=F楼层时掉下不会碎，&gt;F楼层时掉下会碎  </p>
-<script type="math/tex; mode=display">
-  dp(N, K) = 1 + \min \limits_{1<=X<=N} \{ max(dp(X-1, K-1), dp(N-X, k)) \}</script><p>  其中, dp(X-1, K-1)表示在第X层扔鸡蛋碎了，表示要到(1, X-1)层之间去找，同时K个鸡蛋减一。dp(N-X, k)表示在第X层仍鸡蛋没有碎，表示要到(N-X, N)层之间去找，同时K个鸡蛋没有消耗，不做处理</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#自底向上</span></span><br><span class="line">dp[i][j] = min(dp[i][j], max(dp[x<span class="number">-1</span>][j<span class="number">-1</span>], dp[i-x][j]))</span><br><span class="line"><span class="keyword">return</span> dp[<span class="number">-1</span>][<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+          动态规划简单
+53.最大连续子序列和 | leetcode  
+  12dp[i] = max(dp[i-1]+nums[i], nums[i])  return max(dp)
+198.打家劫舍 | leetcode | 输入非负一维数组，不能连续两个数相邻，求最大和  12dp[i] = max(dp[i-1],dp[i-2]+nums[i]) return dp[-1]
 
-          
+
+中等
+3.无重复字符的最长子串 | leetcode | 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+  1234567# dp[i]表示以i位置结尾的字符最长无重复字串长度if i - dp[
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -597,6 +577,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -615,34 +626,22 @@
       
         
           
-            <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><blockquote>
-<p>现在有一组数，不知道这组数的总量有多少，请描述一种算法能够在这组数据中随机抽取k个数，使得每个数被取出来的概率相等。</p>
-</blockquote>
-<h3 id="蓄水池算法原理"><a href="#蓄水池算法原理" class="headerlink" title="蓄水池算法原理"></a>蓄水池算法原理</h3><p>随机抽样需要实现在n个元素中取k个元素时，每个元素被取中的概率都是相同的，即蓄水池算法可以在不知道n为多大的情况下保证每个元素被取中的概率相同。假设i是蓄水池算法取样的第i个元素，推导如下：</p>
-<ul>
-<li><p>对于第i个数（i&lt;=k)，元素直接进入池中，每个元素进入池子的概率都是1 </p>
-<ul>
-<li>第k+1个元素不被放进池子的概率=1-第k+1个元素被选中的概率$\times$第i个元素被选中的概率 = $1 - \frac{k}{k+1}*\frac{1}{k} = 1- \frac{1}{k+1} = \frac{k}{k+1}$</li>
-<li>第k+2个元素不被选中放进池子的概率=1-第k+2个元素被选中的概率$\times$第i个元素被选中的概率 = $1 - \frac{k}{k+2}*\frac{1}{k} = 1 - \frac{1}{k+2} = \frac{k+1}{k+2}$</li>
-<li>…</li>
-<li>则运行到第n步时，第i个数仍保留的概率 = 被选中的概率 * 不被替换的概率，即：  <script type="math/tex; mode=display">
-1 \times \frac{k}{k+1} \times \frac{k+1}{k+2} \times ... \times \frac{n-1}{n} = \frac{k}{n}</script></li>
-</ul>
-</li>
-<li><p>对于第j个数（j&gt;k），在第j步被选中的概率为$\frac{k}{j}$</p>
-<ul>
-<li>不被第j+1个元素替换的概率为：$1 - \frac{k}{j + 1} \times \frac{1}{k} = \frac{j}{j + 1}$</li>
-<li>不被第j+2个元素替换的概率为：$1 - \frac{k}{j + 2} \times \frac{1}{k} = \frac{j+1}{j + 2}$</li>
-<li>…</li>
-<li>则运行到第 n 步时，被保留的概率 = 被选中的概率 * 不被替换的概率，即：<script type="math/tex; mode=display">\frac{k}{j} \times \frac{j}{j + 1} \times \frac{j + 1}{j + 2} \times \frac{j + 2}{j + 3} \times ... \times \frac{n - 1}{n} = \frac{k}{n}</script></li>
-</ul>
-</li>
-</ul>
-<p>所以对于其中每个元素，被保留的概率都为$\frac{k}{n}$</p>
-<hr>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReservoirSampling</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,  pools)</span>:</span></span><br><span class="line">        self.pools = pools</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sampling</span><span class="params">(self, k)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> k &lt;= len(self.pools), <span class="string">'k should be less than n'</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="comment"># 前 K 个元素直接放入蓄水池中</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">            res.append(self.pools[i])</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># K+1个元素开始进行概率采样，如果采样的r小于k，则用当前的j元素替换蓄水池中的r元素</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(k, len(self.pools)):</span><br><span class="line">            r = random.randint(<span class="number">0</span>, j)</span><br><span class="line">            <span class="keyword">if</span> r&lt;k:</span><br><span class="line">                res[r] = self.pools[j]</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">res = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span><br><span class="line">    k = <span class="number">5</span></span><br><span class="line">    N = <span class="number">100</span></span><br><span class="line">    pools = list(range(<span class="number">1</span>, N+<span class="number">1</span>))</span><br><span class="line">    rs = ReservoirSampling(pools)</span><br><span class="line">    s_res = rs.sampling(k)</span><br><span class="line">    res += s_res</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">d = Counter(res)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+          问题描述
+现在有一组数，不知道这组数的总量有多少，请描述一种算法能够在这组数据中随机抽取k个数，使得每个数被取出来的概率相等。
 
-          
+蓄水池算法原理随机抽样需要实现在n个元素中取k个元素时，每个元素被取中的概率都是相同的，即蓄水池算法可以在不知道n为多大的情况下保证每个元素被取中的概率相同。假设i是蓄水池算法取样的第i个元素，推导如下：
+
+对于第i个数（i&lt;=k)，元素直接进入池中，每个元素进入池子的概率都是1 
+
+第k+1个元素不被放进池子的概率=1-第k+1个元素被选中的概率$\times$第i个元素被选中的概率 = $1 - \frac{k}{k+1}*\frac{1}{k} = 1-
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/18/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -785,6 +784,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -803,74 +833,21 @@
       
         
           
-            <h2 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h2><script type="math/tex; mode=display">
+          目标函数
 \begin{aligned}
 L^{(t)} & =  \sum_{i=1}^n l(y_i, \bar{y}_i^t ) + \Omega(f_t) \\
            & = \sum_{i=1}^n l(y_i, \bar{y}_i^{t-1} + f_t(x_i)) + \gamma T + \frac{1}{2}\lambda\sum_{j=1}^Tw_j^2  
-\end{aligned}</script><p>其中L(t)表示第t轮迭代的目标函数，由损失函数和正则项两部分组成：</p>
-<ul>
-<li>$l(y_i, \bar{y}_i^{t})$  表示损失函数，当损失函数是平方误差时，即同最小二乘cart回归树原理。其中n表示样本个数，$y_i$表示样本i的真实值，$\bar{y}_{i}^{t}$表示第t轮样本i的预测值，$\bar{y}_{i}^{t-1}$表示第t-1轮样本i的预测值，$f_t(x_i)$表示第t轮的决策树对样本i的预测值。故有：$\bar{y}_i^{t}=\bar{y}_i^{t-1}+f_t(x_i)$ 。即第t轮预测值=第t-1轮预测值+第t轮决策树预测值<ul>
-<li>$\Omega(f_t)$表示正则项，n表示样本个数，T表示叶子节点个数。$\gamma和\lambda$都是常数参数，控制正则项。$w_j$表示第t轮的决策树第j个叶子节点预测值.</li>
-</ul>
-</li>
-</ul>
-<h2 id="目标函数二阶泰勒展开"><a href="#目标函数二阶泰勒展开" class="headerlink" title="目标函数二阶泰勒展开"></a>目标函数二阶泰勒展开</h2><p>二阶泰勒展开通式</p>
-<script type="math/tex; mode=display">f(x+\Delta x) \simeq f(x)+f'(x)\Delta x+\frac{1}{2}f''(x)\Delta x^2</script><p>按照上述通式将$l(y_i, \bar{y}_i^{t-1} + f_t(x_i))$二阶展开，通式中的x对比$\bar{y}_i^{t-1}$，通式中的$\Delta x$对比$f_t(x_i))$，则有：</p>
-<script type="math/tex; mode=display">l(y_i, \bar{y}_i^{t-1} + f_t(x_i))=l(y_i, \bar{y}_i^{t-1})+l'(y_i, \bar{y}_i^{t-1})f_t({x_i})+\frac{1}{2}l''(y_i, \bar{y}_i^{t-1})f_t^2(x_i)</script><p>其中，$l(y_i, \bar{y}_i^{t-1})$为样本i第t-1轮的损失，它对于第t轮的样本i来说无论样本i落在哪个叶子节点都一样，可视作常数项丢掉，丢掉常数项有：</p>
-<script type="math/tex; mode=display">l(y_i, \bar{y}_i^{t-1} + f_t(x_i))=l'(y_i, \bar{y}_i^{t-1})f_t({x_i})+\frac{1}{2}l''(y_i, \bar{y}_i^{t-1})f_t^2(x_i)</script><p>$l’(y_i, \bar{y}_i^{t-1})$是对$\bar{y}_i^{t-1}$求一阶导，$l’’(y_i, \bar{y}_i^{t-1})$是对$\bar{y}_i^{t-1}$求二阶导。令：</p>
-<script type="math/tex; mode=display">g_i=l'(y_i, \bar{y}_i^{t-1}),h_i=l''(y_i, \bar{y}_i^{t-1})</script><p>则有：</p>
-<script type="math/tex; mode=display">l(y_i, \bar{y}_i^{t-1} + f_t(x_i))=g_if_t({x_i})+\frac{1}{2}h_if_t^2(x_i)</script><p>带入(1)式有：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L^{(t)}  
-&= \sum_{i=1}^n l(y_i, \bar{y}_i^{t-1} + f_t(x_i)) + \gamma T + \frac{1}{2}\lambda\sum_{j=1}^Tw_j^2   \\
-&=\sum_{i=1}^n [g_if_t({x_i})+\frac{1}{2}h_if_t^2(x_i)] + \gamma T + \frac{1}{2}\lambda\sum_{j=1}^Tw_j^2
-\end{aligned}</script><p>先做下转换，$f_t(x_i)=w_j , 其中 i\in I_j$，表示样本i落在$w_j$这个叶子节点。故有：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L^{(t)} 
-&=\sum_{j=1}^T [ (\sum_{i\in I_j}g_i)w_j+\frac{1}{2}(\sum_{i\in I_j}h_i)w_j^2] + \gamma T + \frac{1}{2}\lambda\sum_{j=1}^Tw_j^2 \\
-&=\sum_{j=1}^T [ (\sum_{i\in I_j}g_i)w_j+\frac{1}{2}(\sum_{i\in I_j}h_i+\lambda)w_j^2] + \gamma T 
-\end{aligned}</script><p>这是一个初中就学过的一元二次方程了，直接用顶点公式可以得出：</p>
-<script type="math/tex; mode=display">w_j = -  \frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda}=- \frac{G_i}{H_i+\lambda}</script><script type="math/tex; mode=display">min(L^{(t)}) = - \frac{1}{2} \sum_{j=1}^T \frac{(\sum_{i \in I_j} g_i)^2}{\sum_{i \in I_j} h_i + \lambda} + \gamma T = -\frac{1}{2} \sum_{j=1}^T \frac{G_i^2}{H_i+\lambda} +\gamma T</script><h3 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h3><p>当损失函数取平方误差时，$l(y_i, \bar{y}_i^{t})= \frac{1}{2}( y_i -  \bar{y}_i^{t} )^2$，则：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-& g_i =l'(y_i, \bar{y}_i^{t-1})=-(y_i -  \bar{y}_i^{t-1} ) \\ \\
- & h_i=l''(y_i, \bar{y}_i^{t-1})=1
- \end{aligned}</script><p>代入$w_j$有：</p>
-<script type="math/tex; mode=display">w_j =  \frac{\sum_{i \in I_j} (y_i -  \bar{y}_i^{t-1} )}{\sum_{i \in I_j} 1 + \lambda}</script><p>当$\lambda=0$时，即没有正则项时，第j个叶子节点的预测值为所有落在第j个叶子节点的样本残差的均值。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>相比于GBDT的优点：</strong><br><strong>1.算法层面：</strong></p>
-<ul>
-<li>显示的在目标函数中加入了正则项，防止过拟合。【正则项是叶子节点个数，和叶子节点预测值的l2正则】</li>
-<li>对目标函数进行泰勒展开到二阶，统一了形式，方便自定义损失函数，并且使用了二阶导的信息，能更快的逼近最优解。</li>
-</ul>
-<p><strong>2.工程层面：</strong></p>
-<ul>
-<li>传统GBDT以CART作为基分类器，xgboost还支持线性分类器</li>
-<li>支持对缺失值的处理，对稀疏格式数据的处理。</li>
-<li>在寻找最优切分点时：<br>xgboost的单机版本是采用遍历每个特征的每个取值【Basic Exact Greedy Algorithm】的方式去寻找最优切分点，为了更加高效的计算损失，采用预排序【pre-sorted】的方法按照每个特征对数据进行排序方便累加梯度信息；<br>xgboost分布式版本采用近似直方图算法选择最优切分点，【直方图存储了两类信息，分别是每个bin中样本的梯度之和，还有就是每个bin中样本数量】</li>
-</ul>
-<p>另外，从最优化的角度来看:<br>GBDT采用的是数值优化的思维, 在参数空间中利用梯度下降法进行优化，朝着负梯度方向，使得叶子节点的预测值不断逼近真实值，使得损失函数最优<br>XGboost用的解析的思维, 在函数空间中用牛顿法进行优化，对目标函数展开到二阶近似, 求得叶子节点预测值的解析解, 进而使得损失函数最优.  </p>
-<p><strong>lightgbm相较于xgboost的优点：</strong></p>
-<ul>
-<li><p>histogram 算法的好处：1.对于一个特征，pre-sorted 需要对每一个不同特征值都计算一次分割增益，而histogram只需要计算#bin(histogram 的横轴的数量) 次；2.在数据并行的时候，用 histgoram 可以大幅降低通信代价。用 pre-sorted 算法的话，通信代价是非常大的（几乎是没办法用的）。所以 xgoobst 在并行的时候也使用 histogram 进行通信； 3.一个叶子的直方图可以由它的父亲节点的直方图与它兄弟的直方图做差得到。</p>
-</li>
-<li><p>在 histogram 算法之上，LightGBM 进行进一步的优化。首先它抛弃了大多数 GBDT 工具使用的按层生长(level-wise) 的决策树生长策略，而使用了带有深度限制的按叶子生长 (leaf-wise) 算法。 level-wise 过一次数据可以同时分裂同一层的叶子，容易进行多线程优化，不容易过拟合。但实际上level-wise是一种低效的算法，因为它不加区分的对待同一层的叶子，带来了很多没必要的开销。因为实际上很多叶子的分裂增益较低，没必要进行搜索和分裂。leaf-wise则是一种更为高效的策略，每次从当前所有叶子中，找到分裂增益最大(一般也是数据量最大)的一个叶子，然后分裂，如此循环。因此同 level-wise 相比，在分裂次数相同的情况下，leaf-wise 可以降低更多的误差，得到更好的精度。leaf-wise 的缺点是可能会长出比较深的决策树，产生过拟合。因此 LightGBM 在leaf-wise 之上增加了一个最大深度的限制，在保证高效率的同时防止过拟合。</p>
-</li>
-</ul>
-<p>直方图存储了两类信息，分别是每个bin中样本的梯度之和，还有就是每个bin中样本数量，故可以一个叶子的直方图可以由它的父亲节点的直方图与它兄弟的直方图做差得到。</p>
-<p>ref:</p>
-<blockquote>
-<p><a href="https://blog.csdn.net/jasonwang_/article/details/80833001" target="_blank" rel="noopener">LightGBM 直方图优化算法</a><br><a href="https://www.zhihu.com/question/51644470/answer/130946285" target="_blank" rel="noopener">如何看待微软新开源的LightGBM?</a><br><a href="https://blog.csdn.net/sb19931201/article/details/52557382" target="_blank" rel="noopener">https://blog.csdn.net/sb19931201/article/details/52557382</a></p>
-</blockquote>
-<h3 id="test-mathjax"><a href="#test-mathjax" class="headerlink" title="test mathjax"></a>test mathjax</h3><script type="math/tex; mode=display">
-\begin{eqnarray}
-\nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\
-\nabla\cdot\vec{B} &=& 0 \\
-\nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\
-\nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
-\end{eqnarray}</script>
-          
+\end{aligned}其中L(t)表示第t轮迭代的目标函数，由损失函数和正则项两部分组成：
+
+$l(y_i, \bar{y}_i^{t})$  表示损失函数，当损失函数是平方误差时，即同最小二乘ca
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/17/xgboost%E6%8E%A8%E5%AF%BC/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1013,6 +990,37 @@ L^{(t)}
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1031,15 +1039,16 @@ L^{(t)}
       
         
           
-            <p><a href="http://lizhiqiang.me/conda/" target="_blank" rel="noopener">conda命令</a></p>
-<h2 id="Anaconda中jupyter切换多个kernel"><a href="#Anaconda中jupyter切换多个kernel" class="headerlink" title="Anaconda中jupyter切换多个kernel"></a>Anaconda中jupyter切换多个kernel</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装nb_conda插件</span></span><br><span class="line">conda install nb_conda</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活对应环境</span></span><br><span class="line">activate env_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装ipykernel</span></span><br><span class="line">pip install ipykernel</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将环境添加到ipython的kernel中</span></span><br><span class="line">python -m ipykernel install --user --name env_name --display-name env_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看jupyter notebook设置的所有kernel：</span></span><br><span class="line">jupyter kernelspec list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除kernel：</span></span><br><span class="line">jupyter kernelspec remove evn_name</span><br></pre></td></tr></table></figure>
-<h2 id="Anaconda管理多个虚拟环境"><a href="#Anaconda管理多个虚拟环境" class="headerlink" title="Anaconda管理多个虚拟环境"></a>Anaconda管理多个虚拟环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看envs</span></span><br><span class="line">conda env list</span><br><span class="line">conda info -e</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建env</span></span><br><span class="line">conda create --name env_name python=3.6</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制创建env </span></span><br><span class="line">conda create -n env_name --<span class="built_in">clone</span> base</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除env </span></span><br><span class="line">conda remove --name env_name --all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入指定env</span></span><br><span class="line">conda activate env_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出指定env</span></span><br><span class="line">conda deactivate</span><br><span class="line"></span><br><span class="line"><span class="comment">#导出env配置文件</span></span><br><span class="line">conda env create -f env_name.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从env配置文件创建env</span></span><br><span class="line">conda env create --name env_name --file env_name.yaml</span><br></pre></td></tr></table></figure>
-<h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">conda list <span class="comment"># 查看已经安装的包</span></span><br><span class="line">conda update conda <span class="comment"># 升级conda自身</span></span><br><span class="line">conda search package_name <span class="comment"># 查询某个包</span></span><br><span class="line">conda install package_name <span class="comment"># 安装新包</span></span><br><span class="line">conda install -n <span class="built_in">test</span> package_name <span class="comment"># 将包安装到指定环境</span></span><br><span class="line">conda update --all <span class="comment"># 更新所有包</span></span><br><span class="line">conda update package_name <span class="comment"># 升级包</span></span><br><span class="line">conda remove package_name <span class="comment"># 移除包</span></span><br><span class="line">conda remove -n <span class="built_in">test</span> package_name  <span class="comment"># 从指定环境中移除包</span></span><br></pre></td></tr></table></figure>
-<h2 id="设置清华源"><a href="#设置清华源" class="headerlink" title="设置清华源"></a>设置清华源</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前的源仓库地址。</span></span><br><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure>
-<h3 id="tensorflow-2-0以下版本GPU测试"><a href="#tensorflow-2-0以下版本GPU测试" class="headerlink" title="tensorflow 2.0以下版本GPU测试"></a>tensorflow 2.0以下版本GPU测试</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/cpu:0'</span>):</span><br><span class="line">    a = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>], shape=[<span class="number">3</span>], name=<span class="string">'a'</span>)</span><br><span class="line">    b = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>], shape=[<span class="number">3</span>], name=<span class="string">'b'</span>)</span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/gpu:1'</span>):</span><br><span class="line">    c = a + b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：allow_soft_placement=True表明：计算设备可自行选择，如果没有这个参数，会报错。</span></span><br><span class="line"><span class="comment"># 因为不是所有的操作都可以被放在GPU上，如果强行将无法放在GPU上的操作指定到GPU上，将会报错。</span></span><br><span class="line">sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=<span class="literal">True</span>, log_device_placement=<span class="literal">True</span>))</span><br><span class="line"><span class="comment"># sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))</span></span><br><span class="line">sess.run(tf.global_variables_initializer())</span><br><span class="line">print(sess.run(c))</span><br></pre></td></tr></table></figure>
-<h3 id="tensorflow-2-0及以上版本GPU测试"><a href="#tensorflow-2-0及以上版本GPU测试" class="headerlink" title="tensorflow 2.0及以上版本GPU测试"></a>tensorflow 2.0及以上版本GPU测试</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看tensorflow版本</span></span><br><span class="line">print(tf.__version__)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'GPU'</span>, tf.test.is_gpu_available())</span><br><span class="line"></span><br><span class="line">a = tf.constant(<span class="number">2.0</span>)</span><br><span class="line">b = tf.constant(<span class="number">4.0</span>)</span><br><span class="line">print(a + b)</span><br></pre></td></tr></table></figure>
-
-          
+          conda命令
+Anaconda中jupyter切换多个kernel1234567891011121314151617# 安装nb_conda插件conda install nb_conda# 激活对应环境activate env_name# 安装ipykernelpip install ipykernel# 将环境添加到ipython的kernel中python -m ipykernel install --user --name env_name --display-name env_name# 查看jupyter notebook设置的所有kernel：jupyter kernelspe
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/17/jupyter-notebook-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1182,6 +1191,37 @@ L^{(t)}
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1200,34 +1240,27 @@ L^{(t)}
       
         
           
-            <h3 id="需要安装的文件"><a href="#需要安装的文件" class="headerlink" title="需要安装的文件"></a>需要安装的文件</h3><ul>
-<li><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js</a> (默认自带了npm)</p>
-</li>
-<li><p>git</p>
-</li>
-<li><p>进入git bash安装安装hexo <code>npm install hexo-cli -g</code></p>
-</li>
-</ul>
-<h3 id="Hexo-初始化和本地预览"><a href="#Hexo-初始化和本地预览" class="headerlink" title="Hexo 初始化和本地预览"></a>Hexo 初始化和本地预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment"># 生成页面</span></span><br><span class="line"></span><br><span class="line">hexo s <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
-<p>访问 <a href="http://localhost:4000，出现">http://localhost:4000，出现</a> Hexo 默认页面，本地博客安装成功！</p>
-<h3 id="部署-Hexo-到-GitHub-Pages"><a href="#部署-Hexo-到-GitHub-Pages" class="headerlink" title="部署 Hexo 到 GitHub Pages"></a>部署 Hexo 到 GitHub Pages</h3><p>安装： <code>npm install hexo-deployer-git --save</code> </p>
-<p>然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> <span class="built_in">type</span>: git</span><br><span class="line"> repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure>
-<p>运行 hexo d 将网站上传部署到 GitHub Pages。 </p>
-<p>访问 <a href="https://用户名.github.io" target="_blank" rel="noopener">https://用户名.github.io</a> 就可以看到部署的自己网站</p>
-<h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><p>进入themes文件夹下运行下载 </p>
-<figure class="highlight plain"><figcaption><span>clone</span><a href="https://github.com/iissnan/hexo-theme-next```" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后打开_config.yml 配置文件 </span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;theme: landscape &#96;&#96;&#96;替换成&#96;&#96;&#96;theme: hexo-theme-next&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">重新在项目根目录下进行本地部署调试 &#96;&#96;&#96;hexo s&#96;&#96;&#96; 即可看到效果</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 本地做更改后，重新发布到GitHub</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line"></span><br><span class="line">hexo clean # 清除缓存文件等</span><br><span class="line"></span><br><span class="line">hexo g   # 生成页面</span><br><span class="line"></span><br><span class="line">hexo s   # 启动预览</span><br></pre></td></tr></table></figure>
-<p>连着的命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 就是清除、生成、启动 </span></span><br><span class="line">hexo clean &amp;&amp; hexo g -s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 就是清除、生成、部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
-<h3 id="Next设置"><a href="#Next设置" class="headerlink" title="Next设置"></a>Next设置</h3><p>ref:</p>
-<blockquote>
-<p><a href="http://theme-next.iissnan.com/getting-started.html#select-language" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html#select-language</a></p>
-<p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/theme-settings.html</a></p>
-<p><a href="https://go2think.com/build-blog-with-hexo-on-github-pages/" target="_blank" rel="noopener">https://go2think.com/build-blog-with-hexo-on-github-pages/</a></p>
-</blockquote>
-<h3 id="正常显示Mathjax"><a href="#正常显示Mathjax" class="headerlink" title="正常显示Mathjax"></a>正常显示Mathjax</h3><p>ref: <a href="https://wangcong.net/article/HexoWihLaTeX.html#comments" target="_blank" rel="noopener">https://wangcong.net/article/HexoWihLaTeX.html#comments</a></p>
+          需要安装的文件
+Node.js (默认自带了npm)
 
-          
+git
+
+进入git bash安装安装hexo npm install hexo-cli -g
+
+
+Hexo 初始化和本地预览123hexo g # 生成页面hexo s # 启动预览
+访问 http://localhost:4000，出现 Hexo 默认页面，本地博客安装成功！
+部署 Hexo 到 GitHub Pages安装： npm install hexo-deployer-git --save 
+然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：
+1234deploy: type: git r
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/17/Win10-Hexo-gitpage%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1348,6 +1381,37 @@ L^{(t)}
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1366,17 +1430,19 @@ L^{(t)}
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More in
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/17/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1542,6 +1608,15 @@ L^{(t)}
   <span class="author" itemprop="copyrightHolder">zdqzyx</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
 </div>
 
 
@@ -1564,17 +1639,17 @@ L^{(t)}
 
   
     <span class="site-uv">
-      访客数
+      <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人
+      
     </span>
   
 
   
     <span class="site-pv">
-      总访问量
+      <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
+      
     </span>
   
 </div>
