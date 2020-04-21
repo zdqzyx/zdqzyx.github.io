@@ -273,6 +273,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zdqzyx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zdqzyx's algorithm blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" itemprop="url">tensorflow2.0踩坑记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-21T23:18:45+08:00">
+                2020-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="tensorflow2.0踩坑记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  922
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1.自定义Layer一般步骤
+
+如果需要使用到其他Layer结构或者Sequential结构，需要在init()函数里赋值
+在build()里面构建权重参数， 每个参数需要赋值name  
+如果参数不给name，当训练到第2个epoch时会报错：AttributeError: ‘NoneType’ object has no attribute ‘replace’
+
+
+在call()里写计算逻辑
+
+
+eg:1234567891011121314151617from tensorflow.keras import layersclass Linear(layers.Layer):  def __
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB-BiRNN-Attention-tensorflow2-0%E5%AE%9E%E7%8E%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -379,7 +589,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  854
+                  907
                 </span>
               
 
@@ -423,12 +633,11 @@
 
 此处实现的网络结构：
 基于tensorflow2.0的keras实现自定义 Attention layer这是tensorflow2.0推荐的写法，继承Layer，自定义Layer
-
 需要注意的几点：  
 
-继承Layer后，一般在build()里面构建权重参数  
-在call()里写计算逻辑
-这里实现的Attention是将GRU各个step的ou
+
+如果需要使用到其他Layer结构或者Sequential结构，需要在init()函数里赋值
+在build()里面构建权重参数， 每个参数需要赋值
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -633,11 +842,11 @@
 
 TextCNN 的网络结构：
 基于tensorflow2.0的keras实现自定义model这是tensorflow2.0推荐的写法，继承Model，使模型子类化
-
 需要注意的几点：  
 
-继承Model后，需要在init里面完成所有layer的初始化，在调用summary函数时显示模型各层shape时，是按照init里layer初始化的顺序打印shape  
-要想在summary()正常显示shape，则需要自
+
+如果需要使用到其他Layer结构或者Sequential结构，需要在init()函数里赋值  
+在model没有fit前，想调用summary函数时显示模型各层shape时，则需要自定义一个函数去build下模型，类似下面代码
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1945,7 +2154,7 @@ More in
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2034,7 +2243,7 @@ More in
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.2k</span>
+    <span title="Site words total count">8.2k</span>
   
 </div>
 
