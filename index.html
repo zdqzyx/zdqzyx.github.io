@@ -273,6 +273,207 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zdqzyx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zdqzyx's algorithm blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/" itemprop="url">tensorflow中tensor运算函数记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-24T21:33:54+08:00">
+                2020-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
+                    <span itemprop="name">日常记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="tensorflow中tensor运算函数记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  273
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          tf.padtf.pad(    tensor, paddings, mode=’CONSTANT’, constant_values=0, name=None)padding的rank和tensor保持一直，例如tensor=[[1,2,3]], padding=[[1,1], [2,2]]，则表示在原始tensor的第一个维度上下各增加一行0，在第二个维度上左右各增加两列0
+example:123456# 应用场景：机器翻译中，在decoder阶段，在target_input前填充一个句子开始符号t=tf.constant([[1,2,3]], constant_values=0)prin
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/tensorflow2-0%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -327,8 +528,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
+                    <span itemprop="name">日常记录</span>
                   </a>
                 </span>
 
@@ -379,7 +580,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  922
+                  1.5k
                 </span>
               
 
@@ -395,7 +596,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  8
                 </span>
               
             </div>
@@ -418,17 +619,9 @@
       
         
           
-          1.自定义Layer一般步骤
-
-如果需要使用到其他Layer结构或者Sequential结构，需要在init()函数里赋值
-在build()里面构建权重参数， 每个参数需要赋值name  
-如果参数不给name，当训练到第2个epoch时会报错：AttributeError: ‘NoneType’ object has no attribute ‘replace’
-
-
-在call()里写计算逻辑
-
-
-eg:1234567891011121314151617from tensorflow.keras import layersclass Linear(layers.Layer):  def __
+          tensorflow2.0设计理念
+ref: https://blog.tensorflow.org/2019/01/what-are-symbolic-and-imperative-apis.html
+Symbolic (or Declarative) APIsSequential APIs1234567891011121314151617import tensorflow as tfmnist = tf.keras.datasets.mnist(x_train, y_train), (x_test, y_test) = mnist.load_data()x_train, x_test = 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1628,7 +1821,7 @@ $l(y_i, \bar{y}_i^{t})$  表示损失函数，当损失函数是平方误差时�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  462
+                  501
                 </span>
               
 
@@ -1668,7 +1861,7 @@ $l(y_i, \bar{y}_i^{t})$  表示损失函数，当损失函数是平方误差时�
         
           
           conda命令
-Anaconda中jupyter切换多个kernel1234567891011121314151617# 安装nb_conda插件conda install nb_conda# 激活对应环境activate env_name# 安装ipykernelpip install ipykernel# 将环境添加到ipython的kernel中python -m ipykernel install --user --name env_name --display-name env_name# 查看jupyter notebook设置的所有kernel：jupyter kernelspe
+Anaconda中jupyter切换多个kernel1234567891011121314151617181920# 在base环境里，安装nb_conda插件，会自动关连其他kernelconda install nb_conda# 激活对应环境activate env_name#安装jupyter（很重要）conda install -y jupyter# 安装ipykernel# pip install ipykernel# 将环境添加到ipython的kernel中# python -m ipykernel install --user --name env_name 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2154,7 +2347,7 @@ More in
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2165,7 +2358,7 @@ More in
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2243,7 +2436,7 @@ More in
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.2k</span>
+    <span title="Site words total count">9.1k</span>
   
 </div>
 
