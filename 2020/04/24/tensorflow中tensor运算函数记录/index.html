@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="tf.padtf.pad(    tensor, paddings, mode&#x3D;’CONSTANT’, constant_values&#x3D;0, name&#x3D;None)padding的rank和tensor保持一直，例如tensor&#x3D;[[1,2,3]], padding&#x3D;[[1,1], [2,2]]，则表示在原始tensor的第一个维度上下各增加一行0，在第二个维度上左右各增加两列0 example:1">
+<meta name="description" content="12import tensorflow as tfimport numpy as np 123456# 这两种效果等价np.random.seed(10)a &#x3D; np.random.randint(0,9,(2, 1, 4, 3))b &#x3D; np.random.randint(0,9,(2, 8, 3, 4))print(tf.matmul(a, b).shape)print(tf.matmul(t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tensorflow中tensor运算函数记录">
 <meta property="og:url" content="http://yoursite.com/2020/04/24/tensorflow%E4%B8%ADtensor%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="zdqzyx&#39;s algorithm blog">
-<meta property="og:description" content="tf.padtf.pad(    tensor, paddings, mode&#x3D;’CONSTANT’, constant_values&#x3D;0, name&#x3D;None)padding的rank和tensor保持一直，例如tensor&#x3D;[[1,2,3]], padding&#x3D;[[1,1], [2,2]]，则表示在原始tensor的第一个维度上下各增加一行0，在第二个维度上左右各增加两列0 example:1">
+<meta property="og:description" content="12import tensorflow as tfimport numpy as np 123456# 这两种效果等价np.random.seed(10)a &#x3D; np.random.randint(0,9,(2, 1, 4, 3))b &#x3D; np.random.randint(0,9,(2, 8, 3, 4))print(tf.matmul(a, b).shape)print(tf.matmul(t">
 <meta property="article:published_time" content="2020-04-24T13:33:54.000Z">
-<meta property="article:modified_time" content="2020-04-24T13:48:53.455Z">
+<meta property="article:modified_time" content="2020-05-01T12:57:42.713Z">
 <meta property="article:author" content="zdqzyx">
 <meta property="article:tag" content="tensorflow2.0">
 <meta property="article:tag" content="教程">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  273
+                  871
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -419,14 +419,62 @@
       
 
       
-        <h3 id="tf-pad"><a href="#tf-pad" class="headerlink" title="tf.pad"></a><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/pad" target="_blank" rel="noopener">tf.pad</a></h3><p>tf.pad(<br>    tensor, paddings, mode=’CONSTANT’, constant_values=0, name=None<br>)<br>padding的rank和tensor保持一直，例如tensor=[[1,2,3]], padding=[[1,1], [2,2]]，则表示在原始tensor的第一个维度上下各增加一行0，在第二个维度上左右各增加两列0</p>
-<p>example:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 应用场景：机器翻译中，在decoder阶段，在target_input前填充一个句子开始符号</span></span><br><span class="line">t=tf.constant([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]], constant_values=<span class="number">0</span>)</span><br><span class="line">print(t.shape)</span><br><span class="line">t = tf.pad(t, paddings=[[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line">print(t.shape)</span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>output:<br>(1, 3)<br>(1, 4)<br>tf.Tensor([[0 1 2 3]], shape=(1, 4), dtype=int32)</p>
-</blockquote>
-<h3 id="tf-stack"><a href="#tf-stack" class="headerlink" title="tf.stack"></a><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/stack" target="_blank" rel="noopener">tf.stack</a></h3><p>tf.stack(<br>    values, axis=0, name=’stack’<br>)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = tf.constant([<span class="number">1</span>, <span class="number">4</span>])</span><br><span class="line">y = tf.constant([<span class="number">2</span>, <span class="number">5</span>])</span><br><span class="line">z = tf.constant([<span class="number">3</span>, <span class="number">6</span>])</span><br><span class="line">tf.stack([x, y, z])  <span class="comment"># [[1, 4], [2, 5], [3, 6]] (Pack along first dim.)</span></span><br><span class="line">tf.stack([x, y, z], axis=<span class="number">1</span>)  <span class="comment"># [[1, 2, 3], [4, 5, 6]]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="tf-slice"><a href="#tf-slice" class="headerlink" title="tf.slice"></a><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/slice" target="_blank" rel="noopener">tf.slice</a></h3><p>tf.slice(<br>    tensor, begin, size, name=None<br>)<br>begin表示选取的起始位置，size表示药选取的个数</p>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这两种效果等价</span></span><br><span class="line">np.random.seed(<span class="number">10</span>)</span><br><span class="line">a = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">b = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">2</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line">print(tf.matmul(a, b).shape)</span><br><span class="line">print(tf.matmul(tf.tile(a, [<span class="number">1</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">1</span>]), b).shape)</span><br></pre></td></tr></table></figure>
+<pre><code>(2, 8, 4, 4)
+(2, 8, 4, 4)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要广播的话，首先维度个数要一致</span></span><br><span class="line">a = np.reshape(range(<span class="number">12</span>), (<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>))</span><br><span class="line">b = np.reshape(range(<span class="number">6</span>), (<span class="number">2</span>, <span class="number">3</span>, ))</span><br><span class="line"></span><br><span class="line">print(tf.multiply(a, b[:, :, np.newaxis]))</span><br></pre></td></tr></table></figure>
+<pre><code>tf.Tensor(
+[[[ 0  0]
+  [ 2  3]
+  [ 8 10]]
+
+ [[18 21]
+  [32 36]
+  [50 55]]], shape=(2, 3, 2), dtype=int32)
+</code></pre><h3 id="tf-pad"><a href="#tf-pad" class="headerlink" title="tf.pad"></a><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/pad" target="_blank" rel="noopener">tf.pad</a></h3><p>tf.pad(<br>    tensor, paddings, mode=’CONSTANT’, constant_values=0, name=None<br>)<br>padding的rank和tensor保持一直，例如tensor=[[1,2,3]], padding=[[1,1], [2,2]]，则表示在原始tensor的第一个维度上下各增加一行0，在第二个维度上左右各增加两列0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 应用场景：机器翻译中，在decoder阶段，在target_input前填充一个句子开始符号</span></span><br><span class="line">t=tf.constant([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]])</span><br><span class="line">print(t.shape)</span><br><span class="line">t = tf.pad(t, paddings=[[<span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line">print(t.shape)</span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure>
+<pre><code>(1, 3)
+(1, 4)
+tf.Tensor([[0 1 2 3]], shape=(1, 4), dtype=int32)
+</code></pre><h3 id="tf-stack"><a href="#tf-stack" class="headerlink" title="tf.stack"></a><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/stack" target="_blank" rel="noopener">tf.stack</a></h3><p>tf.stack(<br>    values, axis=0, name=’stack’<br>)  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = tf.constant([<span class="number">1</span>, <span class="number">4</span>])</span><br><span class="line">y = tf.constant([<span class="number">2</span>, <span class="number">5</span>])</span><br><span class="line">z = tf.constant([<span class="number">3</span>, <span class="number">6</span>])</span><br><span class="line">print(tf.stack([x, y, z], axis=<span class="number">0</span>))  <span class="comment"># [[1, 4], [2, 5], [3, 6]] (Pack along first dim.)</span></span><br><span class="line">print(tf.stack([x, y, z], axis=<span class="number">1</span>))  <span class="comment"># [[1, 2, 3], [4, 5, 6]]</span></span><br></pre></td></tr></table></figure>
+<pre><code>tf.Tensor(
+[[1 4]
+ [2 5]
+ [3 6]], shape=(3, 2), dtype=int32)
+tf.Tensor(
+[[1 2 3]
+ [4 5 6]], shape=(2, 3), dtype=int32)
+</code></pre><h3 id="tf-slice"><a href="#tf-slice" class="headerlink" title="tf.slice"></a><a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/slice" target="_blank" rel="noopener">tf.slice</a></h3><p>tf.slice(<br>    tensor, begin, size, name=None<br>)  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t = tf.constant([[[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>]],</span><br><span class="line">                 [[<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>]],</span><br><span class="line">                 [[<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>]]])</span><br><span class="line">tf.slice(t, [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>])  <span class="comment"># [[[3, 3, 3]]]</span></span><br><span class="line">tf.slice(t, [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># [[[3, 3, 3],</span></span><br><span class="line">                                   <span class="comment">#   [4, 4, 4]]]</span></span><br><span class="line">tf.slice(t, [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>])  <span class="comment"># [[[3, 3, 3]],</span></span><br><span class="line">                                   <span class="comment">#  [[5, 5, 5]]]</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;tf.Tensor: id=28, shape=(2, 1, 3), dtype=int32, numpy=
+array([[[3, 3, 3]],
+
+       [[5, 5, 5]]])&gt;
+</code></pre><h3 id="tf-tensordot"><a href="#tf-tensordot" class="headerlink" title="tf.tensordot"></a><a href="https://www.tensorflow.org/api_docs/python/tf/tensordot" target="_blank" rel="noopener">tf.tensordot</a></h3><p>tf.tensordot(<br>    a, b, axes, name=None<br>)<br>给定两个张量（维度大于等于 1 的数组），a 和 b，以及一个包含两个数组的数组， (a_axes, b_axes)，把 a 和 b 的元素的乘积沿着 a_axes 和 b_axes 加和。 如果第三个参数是一个常数 N，那么就沿着 a 的最后 N 个 轴和 b 的前 N 个 轴加和。<br><strong>a_axes和b_axes里的轴拉伸后形状要一样大</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先形状上</span></span><br><span class="line"><span class="comment"># 当axes为一个正整数N时，代表取a的后N个轴，b的前N个轴，</span></span><br><span class="line">a = np.ones([<span class="number">5</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">b = np.ones([<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>])</span><br><span class="line">print(tf.tensordot(a, b, <span class="number">2</span>).shape)</span><br><span class="line">print(<span class="string">'====================='</span>)</span><br><span class="line"><span class="comment">#  当axes= (a_axes, b_axes), 形状就是去掉a_axes和b_axes里得轴</span></span><br><span class="line">a = np.random.random([<span class="number">5</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">b = np.random.random([<span class="number">3</span>, <span class="number">2</span>, <span class="number">6</span>])</span><br><span class="line">print(np.tensordot(a, b, axes=((<span class="number">2</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">0</span>))).shape)</span><br><span class="line">print(tf.tensordot(a, b, axes=((<span class="number">2</span>, <span class="number">3</span>), (<span class="number">0</span>,<span class="number">1</span>))).shape)</span><br></pre></td></tr></table></figure>
+<pre><code>(5, 4, 6)
+=====================
+(5, 4, 6)
+(5, 4, 6)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 深层运行机制</span></span><br><span class="line">np.random.seed(<span class="number">10</span>)</span><br><span class="line">a = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line">b = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">3</span>, <span class="number">2</span>, <span class="number">6</span>))</span><br><span class="line">print(tf.tensordot(a, b, axes=<span class="number">2</span>))</span><br><span class="line">print(np.matmul(np.reshape(a, (<span class="number">2</span>, <span class="number">-1</span>)), np.reshape(b, (<span class="number">-1</span>, <span class="number">6</span>))))</span><br><span class="line"></span><br><span class="line">print(<span class="string">'====================================='</span>)</span><br><span class="line">np.random.seed(<span class="number">10</span>)</span><br><span class="line">a = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>))</span><br><span class="line">b = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line">res = tf.tensordot(a, b, axes=[(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">1</span>,<span class="number">2</span>)])</span><br><span class="line">print(res.shape)</span><br><span class="line">print(res[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">print(np.multiply(a[<span class="number">0</span>, :, :, <span class="number">0</span>].ravel(), b[<span class="number">0</span>, :, :].ravel()).sum())</span><br><span class="line">print(<span class="string">'========================'</span>)</span><br><span class="line"><span class="comment"># 支持 transpose axis， 即对应选中的axis拉伸后做点积</span></span><br><span class="line">res = tf.tensordot(a, b, axes=[(<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>,<span class="number">2</span>)])</span><br><span class="line">print(res[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">print(np.multiply(np.transpose(a, [<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>,<span class="number">3</span>])[<span class="number">0</span>, :, :, <span class="number">0</span>].ravel(), b[<span class="number">0</span>, :, :].ravel()).sum())</span><br></pre></td></tr></table></figure>
+<pre><code>tf.Tensor(
+[[ 58  67  91  78 103  48]
+ [ 49  77  63 112  94 152]], shape=(2, 6), dtype=int32)
+[[ 58  67  91  78 103  48]
+ [ 49  77  63 112  94 152]]
+=====================================
+(3, 5, 2)
+tf.Tensor(106, shape=(), dtype=int32)
+106
+========================
+tf.Tensor(88, shape=(), dtype=int32)
+88
+</code></pre><h3 id="tf-tile"><a href="#tf-tile" class="headerlink" title="tf.tile"></a><a href="https://www.tensorflow.org/api_docs/python/tf/tile" target="_blank" rel="noopener">tf.tile</a></h3><p>tf.tile(<br>    input, multiples, name=None<br>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.random.seed(<span class="number">10</span>)</span><br><span class="line">a = np.random.randint(<span class="number">0</span>,<span class="number">9</span>,(<span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>))</span><br><span class="line">print(tf.tile(a, (<span class="number">1</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">1</span>)).shape)</span><br></pre></td></tr></table></figure>
+<pre><code>(3, 8, 3, 5)
+</code></pre>
       
     </div>
     
@@ -643,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-pad"><span class="nav-number">1.</span> <span class="nav-text">tf.pad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-stack"><span class="nav-number">2.</span> <span class="nav-text">tf.stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-slice"><span class="nav-number">3.</span> <span class="nav-text">tf.slice</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-pad"><span class="nav-number">1.</span> <span class="nav-text">tf.pad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-stack"><span class="nav-number">2.</span> <span class="nav-text">tf.stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-slice"><span class="nav-number">3.</span> <span class="nav-text">tf.slice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-tensordot"><span class="nav-number">4.</span> <span class="nav-text">tf.tensordot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tf-tile"><span class="nav-number">5.</span> <span class="nav-text">tf.tile</span></a></li></ol></div>
             
 
           </div>
@@ -677,7 +725,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.4k</span>
+    <span title="Site words total count">14k</span>
   
 </div>
 
