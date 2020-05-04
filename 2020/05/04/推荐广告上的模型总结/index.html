@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="抽样算法," />
+  <meta name="keywords" content="算法原理,ctr," />
 
 
 
@@ -79,17 +79,24 @@
 
 
 
-<meta name="description" content="问题描述 现在有一组数，不知道这组数的总量有多少，请描述一种算法能够在这组数据中随机抽取k个数，使得每个数被取出来的概率相等。  蓄水池算法原理随机抽样需要实现在n个元素中取k个元素时，每个元素被取中的概率都是相同的，即蓄水池算法可以在不知道n为多大的情况下保证每个元素被取中的概率相同。假设i是蓄水池算法取样的第i个元素，推导如下：  对于第i个数（i&lt;&#x3D;k)，元素直接进入池中，每个元素进入">
+<meta name="description" content="Models List    Model Paper     Convolutional Click Prediction Model [CIKM 2015]A Convolutional Click Prediction Model   Factorization-supported Neural Network [ECIR 2016]Deep Learning over Multi-field">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蓄水池抽样算法">
-<meta property="og:url" content="http://yoursite.com/2020/04/18/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="推荐广告上的模型总结">
+<meta property="og:url" content="http://yoursite.com/2020/05/04/%E6%8E%A8%E8%8D%90%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="zdqzyx&#39;s algorithm blog">
-<meta property="og:description" content="问题描述 现在有一组数，不知道这组数的总量有多少，请描述一种算法能够在这组数据中随机抽取k个数，使得每个数被取出来的概率相等。  蓄水池算法原理随机抽样需要实现在n个元素中取k个元素时，每个元素被取中的概率都是相同的，即蓄水池算法可以在不知道n为多大的情况下保证每个元素被取中的概率相同。假设i是蓄水池算法取样的第i个元素，推导如下：  对于第i个数（i&lt;&#x3D;k)，元素直接进入池中，每个元素进入">
-<meta property="article:published_time" content="2020-04-17T17:10:56.000Z">
-<meta property="article:modified_time" content="2020-04-17T17:27:41.608Z">
+<meta property="og:description" content="Models List    Model Paper     Convolutional Click Prediction Model [CIKM 2015]A Convolutional Click Prediction Model   Factorization-supported Neural Network [ECIR 2016]Deep Learning over Multi-field">
+<meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DeepFM.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DCN.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DCN_2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/xdeepfm.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/xdeepfm_2.jpg">
+<meta property="article:published_time" content="2020-05-04T05:08:44.000Z">
+<meta property="article:modified_time" content="2020-05-04T05:09:35.017Z">
 <meta property="article:author" content="zdqzyx">
-<meta property="article:tag" content="抽样算法">
+<meta property="article:tag" content="算法原理">
+<meta property="article:tag" content="ctr">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DeepFM.png">
 
 
 
@@ -119,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/18/蓄水池抽样算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/04/推荐广告上的模型总结/"/>
 
 
 
 
 
-  <title>蓄水池抽样算法 | zdqzyx's algorithm blog</title>
+  <title>推荐广告上的模型总结 | zdqzyx's algorithm blog</title>
   
 
 
@@ -272,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/04/%E6%8E%A8%E8%8D%90%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zdqzyx">
@@ -289,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蓄水池抽样算法</h1>
+          <h1 class="post-title" itemprop="name headline">推荐广告上的模型总结</h1>
         
 
         <div class="post-meta">
@@ -301,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-18T01:10:56+08:00">
-                2020-04-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-04T13:08:44+08:00">
+                2020-05-04
               </time>
             
 
@@ -324,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/%E5%B9%BF%E5%91%8A%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">广告算法</span>
                   </a>
                 </span>
 
@@ -342,8 +349,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/18/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/18/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+                <a href="/2020/05/04/%E6%8E%A8%E8%8D%90%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/04/%E6%8E%A8%E8%8D%90%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -351,7 +358,7 @@
 
           
           
-             <span id="/2020/04/18/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/" class="leancloud_visitors" data-flag-title="蓄水池抽样算法">
+             <span id="/2020/05/04/%E6%8E%A8%E8%8D%90%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="推荐广告上的模型总结">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -381,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  660
+                  455
                 </span>
               
 
@@ -418,32 +425,110 @@
       
 
       
-        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><blockquote>
-<p>现在有一组数，不知道这组数的总量有多少，请描述一种算法能够在这组数据中随机抽取k个数，使得每个数被取出来的概率相等。</p>
-</blockquote>
-<h3 id="蓄水池算法原理"><a href="#蓄水池算法原理" class="headerlink" title="蓄水池算法原理"></a>蓄水池算法原理</h3><p>随机抽样需要实现在n个元素中取k个元素时，每个元素被取中的概率都是相同的，即蓄水池算法可以在不知道n为多大的情况下保证每个元素被取中的概率相同。假设i是蓄水池算法取样的第i个元素，推导如下：</p>
-<ul>
-<li><p>对于第i个数（i&lt;=k)，元素直接进入池中，每个元素进入池子的概率都是1 </p>
-<ul>
-<li>第k+1个元素不被放进池子的概率=1-第k+1个元素被选中的概率$\times$第i个元素被选中的概率 = $1 - \frac{k}{k+1}*\frac{1}{k} = 1- \frac{1}{k+1} = \frac{k}{k+1}$</li>
-<li>第k+2个元素不被选中放进池子的概率=1-第k+2个元素被选中的概率$\times$第i个元素被选中的概率 = $1 - \frac{k}{k+2}*\frac{1}{k} = 1 - \frac{1}{k+2} = \frac{k+1}{k+2}$</li>
-<li>…</li>
-<li>则运行到第n步时，第i个数仍保留的概率 = 被选中的概率 * 不被替换的概率，即：  <script type="math/tex; mode=display">
-1 \times \frac{k}{k+1} \times \frac{k+1}{k+2} \times ... \times \frac{n-1}{n} = \frac{k}{n}</script></li>
+        <h2 id="Models-List"><a href="#Models-List" class="headerlink" title="Models List"></a>Models List</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:left">Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Convolutional Click Prediction Model</td>
+<td style="text-align:left">[CIKM 2015]<a href="http://ir.ia.ac.cn/bitstream/173211/12337/1/A%20Convolutional%20Click%20Prediction%20Model.pdf" target="_blank" rel="noopener">A Convolutional Click Prediction Model</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Factorization-supported Neural Network</td>
+<td style="text-align:left">[ECIR 2016]<a href="https://arxiv.org/pdf/1601.02376.pdf" target="_blank" rel="noopener">Deep Learning over Multi-field Categorical Data: A Case Study on User Response Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Product-based Neural Network</td>
+<td style="text-align:left">[ICDM 2016]<a href="https://arxiv.org/pdf/1611.00144.pdf" target="_blank" rel="noopener">Product-based neural networks for user response prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Wide &amp; Deep</td>
+<td style="text-align:left">[DLRS 2016]<a href="https://arxiv.org/pdf/1606.07792.pdf" target="_blank" rel="noopener">Wide &amp; Deep Learning for Recommender Systems</a></td>
+</tr>
+<tr>
+<td style="text-align:center">DeepFM</td>
+<td style="text-align:left">[IJCAI 2017]<a href="http://www.ijcai.org/proceedings/2017/0239.pdf" target="_blank" rel="noopener">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Piece-wise Linear Model</td>
+<td style="text-align:left">[arxiv 2017]<a href="https://arxiv.org/abs/1704.05194" target="_blank" rel="noopener">Learning Piece-wise Linear Models from Large Scale Data for Ad Click Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Deep &amp; Cross Network</td>
+<td style="text-align:left">[ADKDD 2017]<a href="https://arxiv.org/abs/1708.05123" target="_blank" rel="noopener">Deep &amp; Cross Network for Ad Click Predictions</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Attentional Factorization Machine</td>
+<td style="text-align:left">[IJCAI 2017]<a href="http://www.ijcai.org/proceedings/2017/435" target="_blank" rel="noopener">Attentional Factorization Machines: Learning the Weight of Feature Interactions via Attention Networks</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Neural Factorization Machine</td>
+<td style="text-align:left">[SIGIR 2017]<a href="https://arxiv.org/pdf/1708.05027.pdf" target="_blank" rel="noopener">Neural Factorization Machines for Sparse Predictive Analytics</a></td>
+</tr>
+<tr>
+<td style="text-align:center">xDeepFM</td>
+<td style="text-align:left">[KDD 2018]<a href="https://arxiv.org/pdf/1803.05170.pdf" target="_blank" rel="noopener">xDeepFM: Combining Explicit and Implicit Feature Interactions for Recommender Systems</a></td>
+</tr>
+<tr>
+<td style="text-align:center">AutoInt</td>
+<td style="text-align:left">[arxiv 2018]<a href="https://arxiv.org/abs/1810.11921" target="_blank" rel="noopener">AutoInt: Automatic Feature Interaction Learning via Self-Attentive Neural Networks</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Deep Interest Network</td>
+<td style="text-align:left">[KDD 2018]<a href="https://arxiv.org/pdf/1706.06978.pdf" target="_blank" rel="noopener">Deep Interest Network for Click-Through Rate Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Deep Interest Evolution Network</td>
+<td style="text-align:left">[AAAI 2019]<a href="https://arxiv.org/pdf/1809.03672.pdf" target="_blank" rel="noopener">Deep Interest Evolution Network for Click-Through Rate Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">ONN</td>
+<td style="text-align:left">[arxiv 2019]<a href="https://arxiv.org/pdf/1904.12579.pdf" target="_blank" rel="noopener">Operation-aware Neural Networks for User Response Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">FGCNN</td>
+<td style="text-align:left">[WWW 2019]<a href="https://arxiv.org/pdf/1904.04447" target="_blank" rel="noopener">Feature Generation by Convolutional Neural Network for Click-Through Rate Prediction </a></td>
+</tr>
+<tr>
+<td style="text-align:center">Deep Session Interest Network</td>
+<td style="text-align:left">[IJCAI 2019]<a href="https://arxiv.org/abs/1905.06482" target="_blank" rel="noopener">Deep Session Interest Network for Click-Through Rate Prediction </a></td>
+</tr>
+<tr>
+<td style="text-align:center">FiBiNET</td>
+<td style="text-align:left">[RecSys 2019]<a href="https://arxiv.org/pdf/1905.09433.pdf" target="_blank" rel="noopener">FiBiNET: Combining Feature Importance and Bilinear feature Interaction for Click-Through Rate Prediction</a></td>
+</tr>
+<tr>
+<td style="text-align:center">FLEN</td>
+<td style="text-align:left">[arxiv 2019]<a href="https://arxiv.org/pdf/1911.04690.pdf" target="_blank" rel="noopener">FLEN: Leveraging Field for Scalable CTR Prediction</a>   </td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="done"><a href="#done" class="headerlink" title="done"></a>done</h2><ul>
+<li>[X] DeepFM</li>
+</ul>
+<h2 id="DeepFM"><a href="#DeepFM" class="headerlink" title="DeepFM"></a>DeepFM</h2><p><a href="https://zdqzyx.github.io/2020/04/29/DeepFM%E8%AF%A6%E8%A7%A3%E5%92%8C%E5%AE%9E%E7%8E%B0/#more" target="_blank" rel="noopener">blog</a><br><a href="">github</a></p>
+<p>整体网络结构<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DeepFM.png"  width='80%'/></p>
+<h2 id="Deep-amp-Cross-Network"><a href="#Deep-amp-Cross-Network" class="headerlink" title="Deep &amp; Cross Network"></a>Deep &amp; Cross Network</h2><p>（实用性不高）</p>
+<p>整体网络结构<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DCN.png" width='80%'/></p>
+<p> Visualization of a cross layer<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DCN_2.png" width='80%'/></p>
+<h2 id="XDeepFM"><a href="#XDeepFM" class="headerlink" title="XDeepFM"></a>XDeepFM</h2><p>整体网络结构<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/xdeepfm.png"/></p>
+<p>CIN部分结构<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/xdeepfm_2.jpg"/></p>
+<p>CIN输入输出：  </p>
+<ol>
+<li>输入：x0(n, m, d)，n为batch_size, m为离散特征个数，d为embedding维度  </li>
+<li>假设第k层为xk(n, h(k+1), d)，则第k+1层计算过程为：<ul>
+<li>x0和xk在axis为1维度上两两 Hadamard product，得到(n, d, m*h(k))</li>
+<li>接着进行在axis为2的维度上价钱求和得到(n, d)，这样的操作做h(k+1)次得到(n, d, h(k+1))，交换axis1,2，得到(n, h(k+1), d)</li>
 </ul>
 </li>
-<li><p>对于第j个数（j&gt;k），在第j步被选中的概率为$\frac{k}{j}$</p>
-<ul>
-<li>不被第j+1个元素替换的概率为：$1 - \frac{k}{j + 1} \times \frac{1}{k} = \frac{j}{j + 1}$</li>
-<li>不被第j+2个元素替换的概率为：$1 - \frac{k}{j + 2} \times \frac{1}{k} = \frac{j+1}{j + 2}$</li>
-<li>…</li>
-<li>则运行到第 n 步时，被保留的概率 = 被选中的概率 * 不被替换的概率，即：<script type="math/tex; mode=display">\frac{k}{j} \times \frac{j}{j + 1} \times \frac{j + 1}{j + 2} \times \frac{j + 2}{j + 3} \times ... \times \frac{n - 1}{n} = \frac{k}{n}</script></li>
-</ul>
-</li>
-</ul>
-<p>所以对于其中每个元素，被保留的概率都为$\frac{k}{n}$</p>
-<hr>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReservoirSampling</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,  pools)</span>:</span></span><br><span class="line">        self.pools = pools</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sampling</span><span class="params">(self, k)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> k &lt;= len(self.pools), <span class="string">'k should be less than n'</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="comment"># 前 K 个元素直接放入蓄水池中</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">            res.append(self.pools[i])</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># K+1个元素开始进行概率采样，如果采样的r小于k，则用当前的j元素替换蓄水池中的r元素</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(k, len(self.pools)):</span><br><span class="line">            r = random.randint(<span class="number">0</span>, j)</span><br><span class="line">            <span class="keyword">if</span> r&lt;k:</span><br><span class="line">                res[r] = self.pools[j]</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试</span></span><br><span class="line">res = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span><br><span class="line">    k = <span class="number">5</span></span><br><span class="line">    N = <span class="number">100</span></span><br><span class="line">    pools = list(range(<span class="number">1</span>, N+<span class="number">1</span>))</span><br><span class="line">    rs = ReservoirSampling(pools)</span><br><span class="line">    s_res = rs.sampling(k)</span><br><span class="line">    res += s_res</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">d = Counter(res)</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+<li>输出：K个(n, h(i), d), i属于[1, K]，在axis=1的维度拼接，在axis=2的维度进行sum pooling，得到(n, h(out))， 其中h(out)为h(1)+h(2)+…+h(K)</li>
+</ol>
 
       
     </div>
@@ -464,7 +549,7 @@
   </li>
 <li class="post-copyright-link">
   <strong>本文链接：</strong>
-  <a href="https://zdqzyx.github.io/2020/04/18/蓄水池抽样算法/" target="_blank" rel="noopener" title="蓄水池抽样算法">https://zdqzyx.github.io/2020/04/18/蓄水池抽样算法/</a>
+  <a href="https://zdqzyx.github.io/2020/05/04/推荐广告上的模型总结/" target="_blank" rel="noopener" title="推荐广告上的模型总结">https://zdqzyx.github.io/2020/05/04/推荐广告上的模型总结/</a>
 </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -479,7 +564,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95/" rel="tag"># 抽样算法</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/" rel="tag"># 算法原理</a>
+          
+            <a href="/tags/ctr/" rel="tag"># ctr</a>
           
         </div>
       
@@ -492,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/17/xgboost%E6%8E%A8%E5%AF%BC/" rel="next" title="xgboost推导">
-                <i class="fa fa-chevron-left"></i> xgboost推导
+              <a href="/2020/04/29/DeepFM%E8%AF%A6%E8%A7%A3%E5%92%8C%E5%AE%9E%E7%8E%B0/" rel="next" title="DeepFM详解和实现">
+                <i class="fa fa-chevron-left"></i> DeepFM详解和实现
               </a>
             
           </div>
@@ -501,10 +588,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/18/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" rel="prev" title="动态规划算法总结">
-                动态规划算法总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -659,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#蓄水池算法原理"><span class="nav-number">2.</span> <span class="nav-text">蓄水池算法原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Models-List"><span class="nav-number">1.</span> <span class="nav-text">Models List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#done"><span class="nav-number">2.</span> <span class="nav-text">done</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DeepFM"><span class="nav-number">3.</span> <span class="nav-text">DeepFM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-amp-Cross-Network"><span class="nav-number">4.</span> <span class="nav-text">Deep &amp; Cross Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XDeepFM"><span class="nav-number">5.</span> <span class="nav-text">XDeepFM</span></a></li></ol></div>
             
 
           </div>

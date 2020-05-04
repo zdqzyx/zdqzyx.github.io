@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/deepfm_deep.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/20200429225833.png">
 <meta property="article:published_time" content="2020-04-29T05:59:22.000Z">
-<meta property="article:modified_time" content="2020-05-01T13:23:43.383Z">
+<meta property="article:modified_time" content="2020-05-01T15:52:13.685Z">
 <meta property="article:author" content="zdqzyx">
 <meta property="article:tag" content="算法原理">
 <meta property="article:tag" content="ctr">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  899
+                  951
                 </span>
               
 
@@ -441,7 +441,7 @@ y(\mathbf{x}) = w_0+ \sum_{i=1}^n w_i x_i + \sum_{i=1}^n \sum_{j=i+1}^n \langle 
 = & \frac{1}{2} \sum_{f=1}^k \left( \left(\sum_{i=1}^n v_{if}x_i \right) \left( \sum_{j=1}^n v_{jf}x_j \right) -\sum_{i=1}^n v_{i,f}^2x_i^2 \right) \\
 = & \frac{1}{2} \sum_{f=1}^k \left( \left(\sum_{i=1}^n v_{if}x_i \right)^2 -\sum_{i=1}^n v_{i,f}^2x_i^2\right)
 \end{aligned} %]]></script><h1 id="DeepFM"><a href="#DeepFM" class="headerlink" title="DeepFM"></a>DeepFM</h1><p>Paper [IJCAI 2017]:<br><a href="http://www.ijcai.org/proceedings/2017/0239.pdf" target="_blank" rel="noopener">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</a></p>
-<h2 id="网络结构图"><a href="#网络结构图" class="headerlink" title="网络结构图"></a>网络结构图</h2><p>输入：(n, f)<br>fm部分：根据特征id进行embedding ==&gt; (n, f, k)，k为embedding向量维度，在按照<br>deep部分：</p>
+<h2 id="网络结构图"><a href="#网络结构图" class="headerlink" title="网络结构图"></a>网络结构图</h2><p>输入：input_idxs(n, f), input_values(n, f)<br>fm部分：根据特征id(input_idxs)进行embedding ==&gt; (n, f, k)，k为embedding向量维度，乘以input_values，在进行二阶特征交叉。  input_values连接一个Weight得到一阶特征表达。<br>deep部分：根据特征id进行embedding ==&gt; (n, f, k)，乘以input_values，在reshape成(n, f*k)，在连接Dense</p>
 <p>整体网络结构<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/DeepFM.png"/></p>
 <p>FM部分：<br><img src="https://raw.githubusercontent.com/zdqzyx/images/master/picgo/deepfm-2.png
 "/></p>
@@ -516,6 +516,10 @@ y(\mathbf{x}) = w_0+ \sum_{i=1}^n w_i x_i + \sum_{i=1}^n \sum_{j=i+1}^n \langle 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/04/%E6%8E%A8%E8%8D%90%E5%B9%BF%E5%91%8A%E4%B8%8A%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/" rel="prev" title="推荐广告上的模型总结">
+                推荐广告上的模型总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -599,7 +603,7 @@ y(\mathbf{x}) = w_0+ \sum_{i=1}^n w_i x_i + \sum_{i=1}^n \sum_{j=i+1}^n \langle 
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -704,7 +708,7 @@ y(\mathbf{x}) = w_0+ \sum_{i=1}^n w_i x_i + \sum_{i=1}^n \sum_{j=i+1}^n \langle 
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14k</span>
+    <span title="Site words total count">14.5k</span>
   
 </div>
 
